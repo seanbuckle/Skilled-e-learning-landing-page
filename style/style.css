@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap");
+* {
+  padding-block: 0;
+  padding-inline: 0;
+  border-block: 0;
+  border-inline: 0;
+  margin-block: 0;
+  margin-inline: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* colors */
+  --dark-blue: hsl(234, 53%, 16%);
+  --pale-pink: hsl(341, 100%, 83%);
+  --pink: hsl(341, 92%, 62%);
+  --bright-pink: hsl(322, 87%, 55%);
+  --orange: hsl(13, 100%, 64%);
+  --purple: hsla(237, 100%, 64%, 1);
+  --white: hsl(0, 0%, 100%);
+  --grey: hsl(235, 10%, 56%);
+  --grey-blue: hsl(234, 25%, 52%);
+  --gradient-1: linear-gradient(var(--orange), var(--bright-pink));
+  --gradient-1-hover:linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%), linear-gradient(0deg, var(--bright-pink) 0%, var(--orange) 100%);
+  --gradient-2: linear-gradient(var(--purple), var(--bright-pink));
+  --gradient-2-hover:linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%), linear-gradient(0deg, #f028a7 0%, #4851ff 100%);
+  --shadow: 0px 25px 50px 0px rgba(6, 22, 141, 0.04);
+  /* fonts */
+  --font-family: "Plus Jakarta Sans", sans-serif;
+  --heading-xl: 800 3.5rem/4.375rem var(--font-family);
+  --heading-lg: 800 2.5rem/3.1875rem var(--font-family);
+  --heading-md: 700 2rem/2.5rem var(--font-family);
+  --heading-sm: 700 1.5rem/1.75rem var(--font-family);
+  --logo: 800 2.25rem/normal var(--font-family);
+  --body-md: 500 1.125rem/1.75rem var(--font-family);
+  --body-sm: 500 1rem/1.75rem var(--font-family);
+}
+
+body {
+  min-block-size: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  font: var(--body-sm);
+  background: linear-gradient(180deg, #FFF 0%, #F0F1FF 100%);
+  overflow-x: hidden;
+}
+
+.site-header {
+  inline-size: 100%;
+  padding-block-start: 1rem;
+  padding-inline: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (min-width: 820px) {
+  .site-header {
+    padding-inline: 2.5rem;
+  }
+}
+@media (min-width: 1124px) {
+  .site-header {
+    padding-inline: 10.3125rem;
+  }
+}
+.site-header button {
+  z-index: 1;
+}
+
+.site-main {
+  padding-inline: 1rem;
+}
+@media (min-width: 820px) {
+  .site-main {
+    padding-inline: 2.5rem;
+  }
+}
+@media (min-width: 1124px) {
+  .site-main {
+    padding-inline: 10.3125rem;
+  }
+}
+.site-main__heading {
+  inline-size: min(100%, 15ch);
+  color: var(--dark-blue);
+  font: var(--heading-xl);
+}
+.site-main__description {
+  inline-size: min(100%, 33ch);
+  color: var(--grey);
+  font: var(--body-md);
+}
+.site-main section:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.hero-img {
+  inline-size: 100%;
+  padding-block: 46px 66px;
+}
+@media (min-width: 760px) {
+  .hero-img {
+    inline-size: min-content;
+    position: absolute;
+    top: -140px;
+    right: -300px;
+  }
+}
+@media (min-width: 1124px) {
+  .hero-img {
+    top: -200px;
+    right: -350px;
+  }
+}
+
+.card-container {
+  padding-block-end: 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
+  grid-gap: 2.5rem;
+}
+@media (min-width: 760px) {
+  .card-container {
+    padding-block-start: 300px;
+  }
+}
+@media (min-width: 1124px) {
+  .card-container {
+    padding-block-start: 450px;
+  }
+}
+@media (min-width: 760px) {
+  .card-container {
+    grid-gap: 80px 10px;
+  }
+}
+@media (min-width: 1124px) {
+  .card-container {
+    grid-gap: 56px 30px;
+  }
+}
+
+.card {
+  padding-block: 56px 32px;
+  padding-inline: 28px;
+  border-start-start-radius: 10px;
+  border-start-end-radius: 10px;
+  border-end-start-radius: 10px;
+  border-end-end-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+.card--gradient {
+  justify-content: flex-start;
+  background: var(--gradient-1);
+  color: var(--white);
+}
+.card__icon {
+  position: absolute;
+  inset: -24px 0 0 28px;
+}
+.card__heading {
+  font: var(--heading-sm);
+  color: var(--dark-blue);
+}
+.card__description {
+  font: var(--body-md);
+  color: var(--grey);
+}
+.card__link {
+  font: var(--body-sm);
+  color: var(--pink);
+  text-decoration: none;
+}
+.card__link:hover {
+  color: var(--pale-pink);
+}
+
+.btn {
+  inline-size: 167px;
+  block-size: 3.5rem;
+  border-start-start-radius: 1.75rem;
+  border-start-end-radius: 1.75rem;
+  border-end-start-radius: 1.75rem;
+  border-end-end-radius: 1.75rem;
+  display: inline-block;
+  font: var(--body-md);
+  color: var(--white);
+  background: var(--dark-blue);
+}
+.btn:hover {
+  background: var(--grey-blue);
+}
+.btn--gradient-1 {
+  background: var(--gradient-1);
+}
+.btn--gradient-1:hover {
+  background: var(--gradient-1-hover);
+}
+.btn--gradient-2 {
+  background: var(--gradient-2);
+}
+.btn--gradient-2:hover {
+  background: var(--gradient-2-hover);
+}
+
+.site-footer {
+  block-size: 7.5rem;
+  padding-inline: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  font: var(--body-sm);
+}
+@media (min-width: 820px) {
+  .site-footer {
+    padding-inline: 2.5rem;
+  }
+}
+@media (min-width: 1124px) {
+  .site-footer {
+    padding-inline: 10.3125rem;
+  }
+}
+.site-footer__logo {
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style.css.map */
